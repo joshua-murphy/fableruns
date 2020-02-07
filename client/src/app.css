@@ -1,0 +1,30 @@
+.ui.header {
+  background: #060606 !important;
+}
+
+.ui.attached.header {
+  border: 1px solid #555 !important;
+}
+
+.ui.menu .ui.dropdown.item .menu .item {
+  background-color: #1a1b1d !important;
+  color: white !important;
+}
+
+.ui.menu .ui.dropdown.item .menu .item:hover {
+  background-color: #313233 !important;
+}
+
+.ui.menu .ui.dropdown.item .menu {
+  border-color: #555555 !important
+}
+
+#game-sidebar .item.active {
+  color: #ffd381 !important;
+  border-right: 2px solid #ffd381 !important;
+}
+
+#nav-games .item.active {
+  color: #ffd381 !important;
+  background: #3e3e3e !important;
+}
