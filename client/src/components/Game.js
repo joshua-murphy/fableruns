@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import Sidebar from './Sidebar';
 import games from './games';
 import { Container, Divider, Grid, Header, Segment } from 'semantic-ui-react';
+import Wizzy from './Wizzy';
 
 export default class Game extends Component {
   state = { activeItem: null, groupName: '', currentGame: {}, currentItem: {} }
@@ -81,6 +82,22 @@ export default class Game extends Component {
     }
   }
 
+  displayInfoOrWizzy = () => {
+    const { name, text } = this.state.currentItem;
+
+    if (name && text) {
+      return(
+        <div>
+          <Divider horizontal content={name} />
+
+          { text }
+        </div>
+      )
+    } else {
+      return <Wizzy />
+    }
+  }
+
   render() {
     const { activeItem, currentGame, currentItem } = this.state;
 
@@ -97,13 +114,7 @@ export default class Game extends Component {
                 {this.getItemText()}
               </Header>
 
-                <Divider horizontal content={currentItem.name} />
-              <Container textAlign='justified'>
-
-                <p>
-                  { currentItem.text || 'Please select an item from the menu' }
-                </p>
-              </Container>
+              { this.displayInfoOrWizzy() }
             </Segment>
           </Grid.Column>
         </Grid.Row>
